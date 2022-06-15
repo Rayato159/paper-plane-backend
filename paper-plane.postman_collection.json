@@ -1,0 +1,1158 @@
+{
+	"info": {
+		"_postman_id": "bed7ad8d-2ccf-40d8-837c-2ebb7a230cc4",
+		"name": "Paper Plane",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18192292"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "password_confirm",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "1000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/users/register",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 - Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirm",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/users/register",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message_error\": null,\r\n    \"result\": {\r\n        \"id\": \"4f45e9d7-cb4c-4ece-8b90-18c382de61ad\",\r\n        \"username\": \"admin\"\r\n    },\r\n    \"status\": \"Created\",\r\n    \"status_code\": 201\r\n}"
+						},
+						{
+							"name": "500 - Username Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirm",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/users/register",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message_error\": \"error, username have been already using.\",\r\n    \"result\": null,\r\n    \"status\": \"Internal Server Error\",\r\n    \"status_code\": 500\r\n}"
+						},
+						{
+							"name": "500 - Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password_confirm",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/users/register",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message_error\": \"Unprocessable Entity\",\r\n    \"result\": null,\r\n    \"status\": \"Internal Server Error\",\r\n    \"status_code\": 500\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/users",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 - No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/users/:id",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "fe8dd94e-9e06-407c-bfa3-c7f47b979068"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": null,\n    \"result\": null,\n    \"status\": \"No Content\",\n    \"status_code\": 204\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let res = pm.response.json()\r",
+									"let accessToken = res.result.access_token\r",
+									"let refreshtoken = res.result.refresh_token\r",
+									"let accountId = res.result.account_id\r",
+									"pm.environment.set(\"access_token\", accessToken)\r",
+									"pm.environment.set(\"refresh_token\", refreshtoken)\r",
+									"pm.environment.set(\"account_id\", accountId)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/auth/login",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 - Logged In",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/auth/login",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message\": null,\r\n    \"result\": {\r\n        \"id\": \"a967dc54-50d8-4211-a8a0-5787b4357adc\",\r\n        \"username\": \"admin\",\r\n        \"account_id\": \"09d1da12-049b-41fd-b3fb-334033bd653c\",\r\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE5NjdkYzU0LTUwZDgtNDIxMS1hOGEwLTU3ODdiNDM1N2FkYyIsInVzZXJuYW1lIjoiYWRtaW4iLCJhY2NvdW50X2lkIjoiMDlkMWRhMTItMDQ5Yi00MWZkLWIzZmItMzM0MDMzYmQ2NTNjIiwiZXhwIjoxNjU1MzE2NzE1fQ.W0HvIX3Pwyc8gxTCeT1ETshFp0xRqzNn3I9Phd2xp8I\",\r\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE5NjdkYzU0LTUwZDgtNDIxMS1hOGEwLTU3ODdiNDM1N2FkYyIsInVzZXJuYW1lIjoiYWRtaW4iLCJhY2NvdW50X2lkIjoiMDlkMWRhMTItMDQ5Yi00MWZkLWIzZmItMzM0MDMzYmQ2NTNjIiwiZXhwIjoxNjU1OTE3OTE1fQ.WFsKe488Ydw96cNiWDan0NrL3eq5mfOXskD4r6ClXy0\"\r\n    },\r\n    \"status\": \"Created\",\r\n    \"status_code\": 201\r\n}"
+						},
+						{
+							"name": "401 - User Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "ggez",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/auth/login",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message_error\": \"error, user not found.\",\n    \"result\": null,\n    \"status\": \"Unauthorized\",\n    \"status_code\": 401\n}"
+						},
+						{
+							"name": "401 - Credentials Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "ggez",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/auth/login",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message_error\": \"error, username or password is incorrect.\",\n    \"result\": null,\n    \"status\": \"Unauthorized\",\n    \"status_code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refresh_token",
+									"value": "{{refresh_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/auth",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 - Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "refresh_token",
+											"value": "{{refresh_token}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/auth",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message\": null,\r\n    \"result\": {\r\n        \"id\": \"a967dc54-50d8-4211-a8a0-5787b4357adc\",\r\n        \"username\": \"admin\",\r\n        \"account_id\": \"09d1da12-049b-41fd-b3fb-334033bd653c\",\r\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE5NjdkYzU0LTUwZDgtNDIxMS1hOGEwLTU3ODdiNDM1N2FkYyIsInVzZXJuYW1lIjoiYWRtaW4iLCJhY2NvdW50X2lkIjoiMDlkMWRhMTItMDQ5Yi00MWZkLWIzZmItMzM0MDMzYmQ2NTNjIiwiZXhwIjoxNjU1MzE2NzM1fQ.5VT0o9m8JekwEVVTqzHzrqIU9v6AVjtcZXZmayKNvKg\",\r\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE5NjdkYzU0LTUwZDgtNDIxMS1hOGEwLTU3ODdiNDM1N2FkYyIsInVzZXJuYW1lIjoiYWRtaW4iLCJhY2NvdW50X2lkIjoiMDlkMWRhMTItMDQ5Yi00MWZkLWIzZmItMzM0MDMzYmQ2NTNjIiwiZXhwIjoxNjU1OTE3OTE1fQ.WFsKe488Ydw96cNiWDan0NrL3eq5mfOXskD4r6ClXy0\"\r\n    },\r\n    \"status\": \"Created\",\r\n    \"status_code\": 201\r\n}"
+						},
+						{
+							"name": "401 - Unauthorize",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "refresh_token",
+											"value": "123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/auth",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message_error\": \"error, user not found.\",\r\n    \"result\": null,\r\n    \"status\": \"Unauthorized\",\r\n    \"status_code\": 401\r\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Get Account Info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{dev-url}}/accounts/:id",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"accounts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{account_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev-url}}/accounts/:id",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": null,\n    \"result\": {\n        \"id\": \"09d1da12-049b-41fd-b3fb-334033bd653c\",\n        \"balance\": 1160,\n        \"user\": {\n            \"id\": \"a967dc54-50d8-4211-a8a0-5787b4357adc\",\n            \"username\": \"admin\"\n        },\n        \"created_at\": \"2022-06-15T23:04:25Z\",\n        \"updated_at\": \"2022-06-15T23:05:34Z\"\n    },\n    \"status\": \"OK\",\n    \"status_code\": 200\n}"
+						},
+						{
+							"name": "204 - No Content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev-url}}/accounts/:id",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message_error\": \"error, account not found.\",\n    \"result\": null,\n    \"status\": \"No content\",\n    \"status_code\": 204\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Add Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "income",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "expense",
+									"value": "200",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/transactions/:account_id",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"transactions",
+								":account_id"
+							],
+							"variable": [
+								{
+									"key": "account_id",
+									"value": "{{account_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 - Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "income",
+											"value": "6304.85",
+											"type": "text"
+										},
+										{
+											"key": "expense",
+											"value": "17252",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/transactions/:id/income",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"transactions",
+										":id",
+										"income"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message_error\": null,\r\n    \"result\": {\r\n        \"id\": \"426e86e7-758f-4d6b-8d14-80e2d92eccde\",\r\n        \"income\": 0,\r\n        \"expense\": 57,\r\n        \"created_at\": \"2022-05-05T21:50:23Z\",\r\n        \"updated_at\": \"2022-05-05T21:50:23Z\",\r\n        \"account_id\": \"a7e2c9f1-3c1d-48c4-ac43-bb4b8f6a6d10\"\r\n    },\r\n    \"status\": \"Created\",\r\n    \"status_code\": 201\r\n}"
+						},
+						{
+							"name": "500 - Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "income",
+											"value": "6304.85",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "expense",
+											"value": "57",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/transactions/:id/income",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"transactions",
+										":id",
+										"income"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message_error\": \"Unprocessable Entity\",\r\n    \"result\": null,\r\n    \"status\": \"Internal Server Error\",\r\n    \"status_code\": 500\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transaction By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{dev-url}}/transactions/:id/info",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"transactions",
+								":id",
+								"info"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "d4e573c5-83e1-4055-a441-e9b5973e0987"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user_id",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/transactions/:id/info",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"transactions",
+										":id",
+										"info"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "06fda8a3-cf6b-4511-88eb-2cfb2ae2e889"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message\": null,\r\n    \"result\": {\r\n        \"id\": \"06fda8a3-cf6b-4511-88eb-2cfb2ae2e889\",\r\n        \"income\": 6304.85,\r\n        \"expense\": 0,\r\n        \"created_at\": \"2022-05-05T00:44:27Z\",\r\n        \"updated_at\": \"2022-05-05T00:44:27Z\",\r\n        \"account_id\": \"a7e2c9f1-3c1d-48c4-ac43-bb4b8f6a6d10\"\r\n    },\r\n    \"status\": \"OK\",\r\n    \"status_code\": 200\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transaction Lists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{dev-url}}/transactions/:account_id?page=1&item_per_page=10&sort=DESC&order_by=created_at",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"transactions",
+								":account_id"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "item_per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								},
+								{
+									"key": "order_by",
+									"value": "created_at"
+								},
+								{
+									"key": "start",
+									"value": "2022-05-04",
+									"disabled": true
+								},
+								{
+									"key": "end",
+									"value": "2022-05-05",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "account_id",
+									"value": "{{account_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev-url}}/transactions/:account_id?page=1&item_per_page=10&sort=DESC&order_by=created_at&start=2022-05-04&end=2022-05-05",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"transactions",
+										":account_id"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "item_per_page",
+											"value": "10"
+										},
+										{
+											"key": "sort",
+											"value": "DESC"
+										},
+										{
+											"key": "order_by",
+											"value": "created_at"
+										},
+										{
+											"key": "start",
+											"value": "2022-05-04"
+										},
+										{
+											"key": "end",
+											"value": "2022-05-05"
+										}
+									],
+									"variable": [
+										{
+											"key": "account_id",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message_error\": null,\n    \"result\": {\n        \"page\": 1,\n        \"item_per_page\": 10,\n        \"total_item\": 2,\n        \"data\": [\n            {\n                \"id\": \"426e86e7-758f-4d6b-8d14-80e2d92eccde\",\n                \"income\": 0,\n                \"expense\": 57,\n                \"created_at\": \"2022-05-05T21:50:23Z\",\n                \"updated_at\": \"2022-05-05T21:50:23Z\",\n                \"account_id\": \"a7e2c9f1-3c1d-48c4-ac43-bb4b8f6a6d10\"\n            },\n            {\n                \"id\": \"06fda8a3-cf6b-4511-88eb-2cfb2ae2e889\",\n                \"income\": 6304.85,\n                \"expense\": 0,\n                \"created_at\": \"2022-05-05T00:44:27Z\",\n                \"updated_at\": \"2022-05-05T00:44:27Z\",\n                \"account_id\": \"a7e2c9f1-3c1d-48c4-ac43-bb4b8f6a6d10\"\n            }\n        ]\n    },\n    \"status\": \"OK\",\n    \"status_code\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Transaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "income",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "expense",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/transactions/:id",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"transactions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "d4e573c5-83e1-4055-a441-e9b5973e0987"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 - OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "income",
+											"value": "60",
+											"type": "text"
+										},
+										{
+											"key": "expense",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/transactions/:id",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "426e86e7-758f-4d6b-8d14-80e2d92eccde"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message_error\": null,\r\n    \"result\": {\r\n        \"id\": \"426e86e7-758f-4d6b-8d14-80e2d92eccde\",\r\n        \"income\": 60,\r\n        \"expense\": 0,\r\n        \"created_at\": \"2022-05-05T21:50:23Z\",\r\n        \"updated_at\": \"2022-05-05T23:38:06Z\",\r\n        \"account_id\": \"a7e2c9f1-3c1d-48c4-ac43-bb4b8f6a6d10\"\r\n    },\r\n    \"status\": \"OK\",\r\n    \"status_code\": 200\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Transactions",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/transactions/:id",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"transactions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "bfc55771-4e97-47cb-92de-338c7dfd590b"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 - No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user_id",
+											"value": "2f65769e-4afc-4a21-b5a7-6e15fc516d4c",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{dev-url}}/transactions/:id",
+									"host": [
+										"{{dev-url}}"
+									],
+									"path": [
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "22d99169-8437-4af6-9dde-f642aa234c15"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message\": null,\r\n    \"result\": null,\r\n    \"status\": \"No Content\",\r\n    \"status_code\": 204\r\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
