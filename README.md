@@ -1,7 +1,7 @@
 <h1>⚡️ Paper Plane Project</h1>
-<p>This is a small project about managing a ledger as <strong><i>API</i></strong> that was done by <strong><i>Golang + Fiber</i></strong>.</p>
+<p>This is a small project to managing a ledger as <strong><i>API</i></strong> that was done by <strong><i>Golang + Fiber</i></strong>.</p>
 <p> 
-I've' got a full-time job as a <strong><i>backend developer</i></strong>. So I need to improve my skill. It's no good if I still lazy after work. It's the reason why this project has been made.</p>
+I've got a full-time job as a <strong><i>backend developer</i></strong>. So I need to improve my skill. It's no good if I still lazy after work. It's the reason why this project has been established.</p>
 
 <h2>📝 Quick Start</h2>
 <h3>Installation</h3>
@@ -10,7 +10,15 @@ I've' got a full-time job as a <strong><i>backend developer</i></strong>. So I n
     <li>Xampp 🦴</li>
     <li>Golang 🦫</li>
     <li>Postman 👨🏽‍🚀</li>
+    <li>Air (Hot Reload)⚡️</li>
 </ul>
+
+```bash
+git clone https://github.com/Rayato159/paper-plane-backend
+cd ./paper-plane-backend
+go get ./...
+air
+```
 
 <h3>Database Schema</h3>
 <img src="database_schema.png">
@@ -40,5 +48,5 @@ I've' got a full-time job as a <strong><i>backend developer</i></strong>. So I n
 </ul>
 
 <h3>Test the API with Postman</h3>
-<p><strong>Postman collection and environment were in this repository. </strong>You just need to clone this repository and import a collection and a environment into the Postman. Then have fun!
-<p>Don't be worry, all example were added.</p>
+<p><strong>Postman collection and environment were in this repository. </strong>You just need to clone and import a collection and an environment into the Postman. Then have fun!
+<p>Don't be worry, all examples were added.</p>
