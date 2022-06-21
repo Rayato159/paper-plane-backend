@@ -23,6 +23,22 @@ air
 <h3>Database Schema</h3>
 <img src="database_schema.png">
 
+<h3>Migration the Database</h3>
+
+<p>You can define the database url by yourself and migrate it.</p>
+
+<p><strong>Migrate Up</strong></p>
+
+```bash
+migrate -database "mysql://user:password@(host:port)/database" -path "./pkg/database/migrations" up
+```
+
+<p><strong>Migrate Down</strong></p>
+
+```bash
+migrate -database "mysql://user:password@(host:port)/database" -path "./pkg/database/migrations" down
+```
+
 <h3>Function Lists</h3>
 <strong>🔒 Authentication</strong>
 <ul>
