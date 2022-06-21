@@ -7,6 +7,6 @@ import (
 )
 
 func MapUsersRoute(r fiber.Router, h users.Handler, u users.Usecase) {
-	r.Post("/register", middlewares.JwtAuthentication(u), h.Register)
+	r.Post("/register", h.Register)
 	r.Delete("/", middlewares.JwtAuthentication(u), h.RemoveUser)
 }
